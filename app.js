@@ -9,7 +9,7 @@ console.log("GPA: " + CalGPA(gradeData))
 
 function InputData(){
     for(let i = 0; i < gradeData.length; i++){
-        input = prompt("วิชาที่: "+(i+1)+ " กรุณาใส่ชื่อวิชา,หน่วยกิต,และคะแนน \nคั่นด้วยเครื่องหมาย(,)")
+        input = prompt("วิชาที่: "+(i+1)+ " กรุณาใส่ชื่อวิชา,หน่วยกิต,และคะแนน \nคั่นด้วยเครื่องหมาย(,) \n(หมายเหตุ: ถ้าวิชานั้นไม่มีหน่วยกิต ให้ใส่เครื่องหมาย (-)")
         gradeData[i] = input
     }
 }
