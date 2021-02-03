@@ -105,7 +105,11 @@ function CalGPA(data){
     
 }
 function PrintGradeDetail(){
+    console.log("ชื่อวิชา\tหน่วยกิต\tคะแนน\tเกรด")
     for(let i = 0; i < gradeData.length; i++){
-        console.log(gradeData[i])
+        let temp = gradeData[i].split(",")
+        console.log(temp[0]+"\t"+temp[1]+"\t"+temp[2]+"\t"+temp[3])
+    }
+}
     }
 }
