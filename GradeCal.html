@@ -13,22 +13,73 @@
             text-align: center;
             border: 1px solid black
         }
+        .container{
+            position: absolute;
+            width: 20%;
+            margin-left: 40%;
+            margin-right: 40%;
+        }
+        .container .center{
+            position: absolute;
+            margin: auto;
+        }
     </style>
     <body>
         <h1 style="text-align: center;">"Grade and GPA Calculator Program!"</h1>
         <p id="Grade_Detail"></p>
         <br>
+        <table class="tableProp">
+            <tr>
+                <td>
+                    <label>ชื่อรายวิชา</label>
+                    <input id="input_subjName"/>
+                </td>
+                <td>
+                    <label>หน่วยกิต</label>
+                    <input id="input_subjCredit"/>
+                </td>
+                <td>
+                    <label>คะแนนรวม</label>
+                    <input id="input_subjScore"/>
+                </td>
+                <td>
+                    <button onclick="InputData()">Add</button>
+                    <button onclick="ClearData()">Clear</button>
+                </td>
+            </tr>
+        </table>
+        <br>
         <table id="GradeTable" class="tableProp">
             <tr>
-                <th>ชื่อรายวิชา</th>
-                <th>หน่วยกิต</th>
-                <th>คะแนนรวม</th>
-                <th>เกรด</th>
+                <td>
+                    <b>ชื่อรายวิชา</b>
+                </td>
+                <td>
+                    <b>หน่วยกิต</b>
+                </td>
+                <td>
+                    <b>คะแนนรวม</b></td>
+                <td>
+                    <b>เกรด</b>
+                </td>
             </tr>
         </table>
         <br>
         <p id="Total_Credit">หน่วยกิตรวม: </p>
         <p id="GPA_Detail">เกรดเฉลี่ย GPA: </p>
+        <br>
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button onclick="CalGrade()">Grade Calculate</button>
+                    </td>
+                    <td>
+                        <button onclick="CalGPA()">GPA Calculate</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <script src="app.js"></script>
     </body>
 </html>
