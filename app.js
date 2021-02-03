@@ -116,7 +116,7 @@ function InsertTable(dataList){
     let table = document.getElementById("GradeTable")
     for(let i = 0; i < dataList.length; i++){
         let temp = dataList[i].split(",")
-        let row = table.insertRow(i+1)
+        let row = table.insertRow()
         let subjName = row.insertCell(0)
         let subjCredit = row.insertCell(1)
         let subjScore = row.insertCell(2)

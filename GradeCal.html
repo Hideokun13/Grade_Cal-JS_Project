@@ -4,19 +4,29 @@
         <title> Grade_Cal </title> 
     </head>
     <style>
+        .tableProp{
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
         table, td{
-            border: 1px black
+            text-align: center;
+            border: 1px solid black
         }
     </style>
     <body>
         <h1 style="text-align: center;">"Grade and GPA Calculator Program!"</h1>
         <p id="Grade_Detail"></p>
-        <table id="GradeTable">
-            <th>ชื่อรายวิชา</th>
-            <th>หน่วยกิต</th>
-            <th>คะแนนรวม</th>
-            <th>เกรด</th>
+        <br>
+        <table id="GradeTable" class="tableProp">
+            <tr>
+                <th>ชื่อรายวิชา</th>
+                <th>หน่วยกิต</th>
+                <th>คะแนนรวม</th>
+                <th>เกรด</th>
+            </tr>
         </table>
+        <br>
         <p id="Total_Credit">หน่วยกิตรวม: </p>
         <p id="GPA_Detail">เกรดเฉลี่ย GPA: </p>
         <script src="app.js"></script>
