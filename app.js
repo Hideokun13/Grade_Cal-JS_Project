@@ -111,5 +111,12 @@ function PrintGradeDetail(){
         console.log(temp[0]+"\t"+temp[1]+"\t"+temp[2]+"\t"+temp[3])
     }
 }
+function FloorGPA(gpa){
+    let gpaFloor = Math.floor(gpa)
+    if(gpa - gpaFloor > 0.05){
+       return (gpa - 0.01).toFixed(2)
+    }
+    else {
+       return gpa.toFixed(2)
     }
 }
