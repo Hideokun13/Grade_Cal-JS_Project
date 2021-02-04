@@ -206,4 +206,12 @@ function deleteData(){
         }
     }
 }
+function deleteDataArr(index){
+    if(gradeData[index] != null && gradeData != ""){
+        console.log(gradeData)
+        console.log(gradeData[index-1])
+        delete gradeData[index-1]
+        gradeData.splice(index-1,1)
+        console.log(gradeData)
+    }
 }
