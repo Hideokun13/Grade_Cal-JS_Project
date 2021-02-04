@@ -1,67 +1,52 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head> 
-        <title> Grade_Cal </title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-            p, label, button{
-                font-family: 'Kanit', sans-serif;
-            }
-            b {
-                font-family: 'Kanit', sans-serif;
-                font-weight: 600;
-            }
-            h1{
-                font-family: 'Kanit', sans-serif;
-                font-weight: bold;
-            }
-            .tableProp{
-                width: 80%;
-                margin-left: 10%;
-                margin-right: 10%;
-            }
-            .tableDetail{
-                width: 30%;
-                margin-left: 35%;
-                margin-right: 35%;
-            }
-            .tableEntity{
-                width: 80%;
-                margin-left: 10%;
-                margin-right: 10%;
-            }
-            .tableProp td{
-                font-family: 'Kanit', sans-serif;
-                text-align: center;
-                border: 1px solid black
-            }
-            .tableDetail td{
-                font-family: 'Kanit', sans-serif;
-                line-height: 1px;
-                text-align: center;
-                border: 1px solid black
-            }
-            .tableEntity td{
-                font-family: 'Kanit', sans-serif;
-                text-align: center;
-                border: 1px solid black
-            }
-            .container{
-                position: absolute;
-                margin: auto;
-                width: 20%;
-                margin-left: 40%;
-                margin-right: 40%;
-            }
-            .container center{
-                position: absolute;
-                margin: auto;
-            }
-            .button {
-                height: 35px;
-            }
-        </style> 
+        <title> Grade_Cal </title> 
     </head>
+    <style>
+        .tableProp{
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .tableDetail{
+            width: 30%;
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+        .tableEntity{
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .tableProp td{
+            text-align: center;
+            border: 1px solid black
+        }
+        .tableDetail td{
+            line-height: 1px;
+            text-align: center;
+            border: 1px solid black
+        }
+        .tableEntity td{
+            text-align: center;
+            border: 1px solid black
+        }
+        .container{
+            position: absolute;
+            margin: auto;
+            width: 20%;
+            margin-left: 40%;
+            margin-right: 40%;
+        }
+        .container center{
+            position: absolute;
+            margin: auto;
+        }
+        .button {
+            height: 35px;
+        }
+    </style>
     <body>
         <h1 style="text-align: center;">"Grade and GPA Calculator Program!"</h1>
         <p id="Grade_Detail"></p>
@@ -103,19 +88,9 @@
             </tr>
         </table>
         <br>
-        <div class="tableProp">
-            <table style="margin-left: 20%;">
-                <tr>
-                    <p id="subj_Count">จำนวนรายวิชา: </p>
-                </tr>
-                <tr>
-                    <p id="Total_Credit">หน่วยกิตรวม: </p>
-                </tr>
-                <tr>
-                    <p id="GPA_Detail">เกรดเฉลี่ย GPA: </p>
-                </tr>
-            </table>
-        </div>
+        <p id="subj_Count">จำนวนรายวิชา: </p>
+        <p id="Total_Credit">หน่วยกิตรวม: </p>
+        <p id="GPA_Detail">เกรดเฉลี่ย GPA: </p>
         <br>
         <div class="container">
             <table>
