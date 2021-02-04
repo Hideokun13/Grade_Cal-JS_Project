@@ -29,48 +29,50 @@ function ClearData(){
     document.getElementById("input_subjScore").value = ""
 }
 function CalGrade(){
-    for(let i = 0; i < gradeData.length; i++){
-        let temp = gradeData[i].split(",")
-        console.log(temp)
-        let score = temp[2]
-        console.log(score)
-        let grade = ""
-        if(temp[1] != "-" && score >= 85){
-            grade = "A"
+    try{
+        for(let i = 0; i < gradeData.length; i++){
+            let temp = gradeData[i].split(",")
+            let score = temp[2]
+            let grade = ""
+            if(temp[1] != "-" && score >= 85){
+                grade = "A"
+            }
+            else if(temp[1] != "-" && score >= 80 && score < 85){
+                grade = "B+"
+            }
+            else if(temp[1] != "-" && score >= 75 && score < 80){
+                grade = "B"
+            }
+            else if(temp[1] != "-" && score >= 70 && score < 75){
+                grade = "C+"
+            }
+            else if(temp[1] != "-" && score >= 65 && score < 70){
+                grade = "C"
+            }
+            else if(temp[1] != "-" && score >= 60 && score < 65){
+                grade = "D+"
+            }
+            else if (temp[1] != "-" && score >= 55 && score < 60){
+                grade = "D"
+            }
+            else if (temp[1] == "-" && score >= 50){
+                grade = "S"
+            }
+            else if (temp[1] == "-" && score < 50){
+                grade = "U"
+            }
+            else {
+                grade = "F"
+            }
+            
+            gradeData[i] = temp[0] + "," + temp[1] + "," + temp[2] + "," + grade
         }
-        else if(temp[1] != "-" && score >= 80 && score < 85){
-            grade = "B+"
-        }
-        else if(temp[1] != "-" && score >= 75 && score < 80){
-            grade = "B"
-        }
-        else if(temp[1] != "-" && score >= 70 && score < 75){
-            grade = "C+"
-        }
-        else if(temp[1] != "-" && score >= 65 && score < 70){
-            grade = "C"
-        }
-        else if(temp[1] != "-" && score >= 60 && score < 65){
-            grade = "D+"
-        }
-        else if (temp[1] != "-" && score >= 55 && score < 60){
-            grade = "D"
-        }
-        else if (temp[1] == "-" && score >= 50){
-            grade = "S"
-        }
-        else if (temp[1] == "-" && score < 50){
-            grade = "U"
-        }
-        else {
-            grade = "F"
-        }
-        
-        gradeData[i] = temp[0] + "," + temp[1] + "," + temp[2] + "," + grade
-        console.log(gradeData[i])
+        ClearTable()
+        PrintGrade()
     }
-    ClearTable()
-    PrintGrade()
+    catch(err){
+        alert("กรุณาใส่ข้อมูลก่อนคำนวณ")
+    }
 }
 function CalGPA(){
     let sumScore = 0
