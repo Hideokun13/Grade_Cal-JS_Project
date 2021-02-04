@@ -148,19 +148,20 @@ function ClearTable(){
 }
 function InsertTable(i){
     let table = document.getElementById("GradeTable")
-            let temp = gradeData[i].split(",")
-            let row = table.insertRow(i+1)
-            let subjName = row.insertCell(0)
-            let subjCredit = row.insertCell(1)
-            let subjScore = row.insertCell(2)
-            let subjGrade = row.insertCell(3)
+        let temp = gradeData[i].split(",")
+        let row = table.insertRow(i+1)
+        let subjName = row.insertCell(0)
+        let subjCredit = row.insertCell(1)
+        let subjScore = row.insertCell(2)
+        let subjGrade = row.insertCell(3)
 
-            subjName.innerHTML = temp[0]
-            subjCredit.innerHTML = temp[1]
-            subjScore.innerHTML = temp[2]
-                if(temp[3] != null){
-                    subjGrade.innerHTML = temp[3]
-                }
+        subjName.innerHTML = temp[0]
+        subjCredit.innerHTML = temp[1]
+        subjScore.innerHTML = temp[2]
+            if(temp[3] != null){
+                subjGrade.innerHTML = temp[3]
+                row.insertCell(4).innerHTML = '<button onclick="deleteData()">Delete</button>'
+            }
 }
 function PrintGrade(){
     let table = document.getElementById("GradeTable")
