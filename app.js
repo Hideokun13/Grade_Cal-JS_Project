@@ -1,21 +1,27 @@
-let num = prompt("คำนวณเกรดทั้งหมดกี่วิชา: ")
-let gradeData = new Array(parseInt(num))
-let i = 0
+let gradeData = new Array(1)
+let numArr = 0
 function InputData(){
     
     let subjName = document.getElementById("input_subjName").value
     let subjCredit = document.getElementById("input_subjCredit").value
     let subjScore = document.getElementById("input_subjScore").value
-    if(subjName != "" && subjCredit != "" && subjScore >= 0){
-        gradeData[i] = subjName + "," + subjCredit + "," + subjScore + "," + "-"
-        console.log(gradeData[i])
+    if(subjName != "" && subjCredit != "" && subjScore >= 0 && subjScore != ""){
+        gradeData[numArr] = subjName + "," + subjCredit + "," + subjScore + "," + "-"
         ClearData()
-        InsertTable(i)
-        i++
+        InsertTable(numArr)
+        gradeData = ExpandArray()
+        numArr++
+        document.getElementById("subj_Count").innerHTML = "จำนวนรายวิชา: " + (numArr)
     }
     else{
         alert("กรุณาใส่ข้อมูลให้ครบถ้วน")
     }
+}
+function ExpandArray(){
+    let temp = gradeData
+    let expandArr = new Array(gradeData.length+1)
+    expandArr = temp
+    return expandArr
 }
 function ClearData(){
     document.getElementById("input_subjName").value = ""
