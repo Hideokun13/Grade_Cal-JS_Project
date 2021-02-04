@@ -9,26 +9,49 @@
             margin-left: 10%;
             margin-right: 10%;
         }
-        table, td{
+        .tableDetail{
+            width: 30%;
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+        .tableEntity{
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .tableProp td{
+            text-align: center;
+            border: 1px solid black
+        }
+        .tableDetail td{
+            line-height: 1px;
+            text-align: center;
+            border: 1px solid black
+        }
+        .tableEntity td{
             text-align: center;
             border: 1px solid black
         }
         .container{
             position: absolute;
+            margin: auto;
             width: 20%;
             margin-left: 40%;
             margin-right: 40%;
         }
-        .container .center{
+        .container center{
             position: absolute;
             margin: auto;
+        }
+        .button {
+            height: 35px;
         }
     </style>
     <body>
         <h1 style="text-align: center;">"Grade and GPA Calculator Program!"</h1>
         <p id="Grade_Detail"></p>
         <br>
-        <table class="tableProp">
+        <table class="tableEntity">
             <tr>
                 <td>
                     <label>ชื่อรายวิชา</label>
@@ -65,6 +88,7 @@
             </tr>
         </table>
         <br>
+        <p id="subj_Count">จำนวนรายวิชา: </p>
         <p id="Total_Credit">หน่วยกิตรวม: </p>
         <p id="GPA_Detail">เกรดเฉลี่ย GPA: </p>
         <br>
@@ -80,6 +104,87 @@
                 </tr>
             </table>
         </div>
+        <br>
+        <p style="text-align: center; margin-top: 3%;">เกณฑ์การคิดเกรด*</p>
+        <table class="tableDetail">
+            <tr>
+                <td>
+                    <p>คะแนนรวม</p>
+                </td>
+                <td>
+                    <p>เกรดที่ให้</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>85 คะแนนขึ้นไป</p>
+                </td>
+                <td>
+                    <p>A</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>80 - 84</p>
+                </td>
+                <td>
+                    <p>B+</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>75 - 79</p>
+                </td>
+                <td>
+                    <p>B</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>70 - 74</p>
+                </td>
+                <td>
+                    <p>C+</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>65 - 69</p>
+                </td>
+                <td>
+                    <p>C</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>60 - 64</p>
+                </td>
+                <td>
+                    <p>D+</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>55 - 59</p>
+                </td>
+                <td>
+                    <p>D</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>ต่ำกว่า 55 คะแนน</p>
+                </td>
+                <td>
+                    <p>F</p>
+                </td>
+            </tr>
+        </table>
+        <p style="text-align: center">*อ้างอิงจากการคิดเกรดตามเกณฑ์ของมหาวิทยาลัยธุรกิจบัณฑิตย์</p>
         <script src="app.js"></script>
     </body>
+    <br>
+    <footer>
+        <p style="text-align: center;">gpacalculator version 0.01 created by Hideokun</p>
+    </footer>
 </html>
