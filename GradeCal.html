@@ -15,15 +15,21 @@
                 font-family: 'Kanit', sans-serif;
                 font-weight: bold;
             }
+            .pageLayout{
+                width: 80%;
+                margin: auto;
+            }
+            .center{
+                margin: auto;
+            }
             .tableProp{
                 width: 80%;
                 margin-left: 10%;
                 margin-right: 10%;
             }
             .tableDetail{
-                width: 30%;
-                margin-left: 35%;
-                margin-right: 35%;
+                width: 300px;
+                margin: auto;
             }
             .tableEntity{
                 width: 80%;
@@ -48,17 +54,20 @@
             }
             .container{
                 position: absolute;
+                margin-left: 25%;
+                margin-right: 25%;
                 margin: auto;
-                width: 20%;
-                margin-left: 40%;
-                margin-right: 40%;
+                width: 50%;
             }
             .container center{
                 position: absolute;
+                margin-left: 50;
+                margin-right: 50;
                 margin: auto;
             }
             .button {
                 height: 35px;
+                width: 120px;
             }
         </style> 
     </head>
@@ -103,7 +112,7 @@
             </tr>
         </table>
         <br>
-        <div class="tableProp">
+        <div class="pageLayout">
             <table style="margin-left: 20%;">
                 <tr>
                     <p id="subj_Count">จำนวนรายวิชา: </p>
@@ -117,98 +126,102 @@
             </table>
         </div>
         <br>
-        <div class="container">
-            <table>
-                <tr>
-                    <td>
-                        <button class="button" onclick="CalGrade()">Grade Calculate</button>
-                    </td>
-                    <td>
-                        <button class="button" onclick="CalGPA()">GPA Calculate</button>
-                    </td>
-                    <td>
-                        <button class="button" onclick="window.location.reload();">Cancel</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <br>
-        <p style="text-align: center; margin-top: 3%;">เกณฑ์การคิดเกรด*</p>
-        <table class="tableDetail">
-            <tr>
-                <td>
-                    <p>คะแนนรวม</p>
-                </td>
-                <td>
-                    <p>เกรดที่ให้</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>85 คะแนนขึ้นไป</p>
-                </td>
-                <td>
-                    <p>A</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>80 - 84</p>
-                </td>
-                <td>
-                    <p>B+</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>75 - 79</p>
-                </td>
-                <td>
-                    <p>B</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>70 - 74</p>
-                </td>
-                <td>
-                    <p>C+</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>65 - 69</p>
-                </td>
-                <td>
-                    <p>C</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>60 - 64</p>
-                </td>
-                <td>
-                    <p>D+</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>55 - 59</p>
-                </td>
-                <td>
-                    <p>D</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>ต่ำกว่า 55 คะแนน</p>
-                </td>
-                <td>
-                    <p>F</p>
-                </td>
-            </tr>
+        <div class="pageLayout">
+                <table class="center">
+                    <tr>
+                        <td>
+                            <button class="button" onclick="CalGrade()">Grade Calculate</button>
+                        </td>
+                        <td>
+                            <button class="button" onclick="CalGPA()">GPA Calculate</button>
+                        </td>
+                        <td>
+                            <button class="button" onclick="window.location.reload();">Cancel</button>
+                        </td>
+                    </tr>
+                </div>
         </table>
-        <p style="text-align: center">*อ้างอิงจากการคิดเกรดตามเกณฑ์ของมหาวิทยาลัยธุรกิจบัณฑิตย์</p>
+        <br>
+        <div class="pageLayout">
+            <p style="text-align: center; margin-top: 3%;">เกณฑ์การคิดเกรด*</p>
+            <div class="center">
+                <table class="tableDetail">
+                    <tr>
+                        <td>
+                            <p>คะแนนรวม</p>
+                        </td>
+                        <td>
+                            <p>เกรดที่ให้</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>85 คะแนนขึ้นไป</p>
+                        </td>
+                        <td>
+                            <p>A</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>80 - 84</p>
+                        </td>
+                        <td>
+                            <p>B+</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>75 - 79</p>
+                        </td>
+                        <td>
+                            <p>B</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>70 - 74</p>
+                        </td>
+                        <td>
+                            <p>C+</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>65 - 69</p>
+                        </td>
+                        <td>
+                            <p>C</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>60 - 64</p>
+                        </td>
+                        <td>
+                            <p>D+</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>55 - 59</p>
+                        </td>
+                        <td>
+                            <p>D</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>ต่ำกว่า 55 คะแนน</p>
+                        </td>
+                        <td>
+                            <p>F</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p style="text-align: center">*อ้างอิงจากการคิดเกรดตามเกณฑ์ของมหาวิทยาลัยธุรกิจบัณฑิตย์</p>
+        </div>
         <script src="app.js"></script>
     </body>
     <br>
