@@ -66,8 +66,8 @@
                     <input id="input_subjScore"/>
                 </td>
                 <td>
-                    <button onclick="InputData()">Add</button>
-                    <button onclick="ClearData()">Clear</button>
+                    <button style="height: 30px; width: 60px;" onclick="InputData()">Add</button>
+                    <button style="height: 30px; width: 60px;"onclick="ClearData()">Clear</button>
                 </td>
             </tr>
         </table>
@@ -96,10 +96,13 @@
             <table>
                 <tr>
                     <td>
-                        <button onclick="CalGrade()">Grade Calculate</button>
+                        <button class="button" onclick="CalGrade()">Grade Calculate</button>
                     </td>
                     <td>
-                        <button onclick="CalGPA()">GPA Calculate</button>
+                        <button class="button" onclick="CalGPA()">GPA Calculate</button>
+                    </td>
+                    <td>
+                        <button class="button" onclick="window.location.reload();">Cancel</button>
                     </td>
                 </tr>
             </table>
