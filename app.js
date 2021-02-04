@@ -78,58 +78,58 @@ function CalGPA(){
     try{
         let sumScore = 0
         let totalCredit = 0
-        for(let i = 0; i < gradeData.length; i++){
-            let temp = gradeData[i].split(",")
-            let credit = parseInt(temp[1])
-            let grade = temp[3]
-            if(temp[3] != "-"){
-                switch(grade){
-                    case "A": {
-                        sumScore += (4 * credit)
-                        totalCredit += credit
-                    } break;
-                    case "B+":{
-                        sumScore += (3.5 * credit)
-                        totalCredit += credit
-                    } break;
-                    case "B":{
-                        sumScore += (3 * credit)
-                        totalCredit += credit
-                    } break;
-                    case "C+":{
-                        sumScore += (2.5 * credit)
-                        totalCredit += credit
-                    } break;
-                    case "C":{
-                        sumScore += (2 * credit)
-                        totalCredit += credit
-                    } break;
-                    case "D+":{
-                        sumScore += (1.5 * credit)
-                        totalCredit += credit
-                    } break;
-                    case "D":{
-                        sumScore += (1 * credit)
-                        totalCredit += credit
-                    } break;
-                    case "F":{
-                        sumScore += 0
-                        totalCredit += credit
-                    } break;
-                    case "S":{
-                        sumScore += 0
-                    } break;
-                    case "U":{
-                        sumScore += 0
-                    } break;
+        if(gradeData[0] !== ""){
+            CalGrade()
+            for(let i = 0; i < gradeData.length; i++){
+                let temp = gradeData[i].split(",")
+                let credit = parseInt(temp[1])
+                let grade = temp[3]
+                if(temp[3] != "-"){
+                    switch(grade){
+                        case "A": {
+                            sumScore += (4 * credit)
+                            totalCredit += credit
+                        } break;
+                        case "B+":{
+                            sumScore += (3.5 * credit)
+                            totalCredit += credit
+                        } break;
+                        case "B":{
+                            sumScore += (3 * credit)
+                            totalCredit += credit
+                        } break;
+                        case "C+":{
+                            sumScore += (2.5 * credit)
+                            totalCredit += credit
+                        } break;
+                        case "C":{
+                            sumScore += (2 * credit)
+                            totalCredit += credit
+                        } break;
+                        case "D+":{
+                            sumScore += (1.5 * credit)
+                            totalCredit += credit
+                        } break;
+                        case "D":{
+                            sumScore += (1 * credit)
+                            totalCredit += credit
+                        } break;
+                        case "F":{
+                            sumScore += 0
+                            totalCredit += credit
+                        } break;
+                        case "S":{
+                            sumScore += 0
+                        } break;
+                        case "U":{
+                            sumScore += 0
+                        } break;
+                    }
                 }
             }
-            else{
-                CalGrade()
-            }
+            document.getElementById("Total_Credit").innerHTML = "หน่วยกิตรวม: " + totalCredit
+            document.getElementById("GPA_Detail").innerHTML = "เกรดเฉลี่ย GPA: " + FloorGPA((sumScore / totalCredit))
         }
-        document.getElementById("Total_Credit").innerHTML = "หน่วยกิตรวม: " + totalCredit
-        document.getElementById("GPA_Detail").innerHTML = "เกรดเฉลี่ย GPA: " + FloorGPA((sumScore / totalCredit))
     }
     catch(err){
         alert("กรุณาใส่ข้อมูลก่อนคำนวณ")
