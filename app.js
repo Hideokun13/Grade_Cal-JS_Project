@@ -190,3 +190,20 @@ function FloorGPA(gpa){
        return gpa.toFixed(2)
     }
 }
+function deleteData(){
+    let index, table = document.getElementById("GradeTable")
+    for(let i = 0; i < table.rows.length; i++){
+        table.rows[i].onclick = function()
+        {
+            index = this.rowIndex
+            let con = confirm("คุณต้องการที่จะลบข้อมูลบรรทัดนี้หรือไม่")
+            if(con === true){
+                deleteDataArr(index)
+                table.deleteRow(index)
+                numArr--
+                document.getElementById("subj_Count").innerHTML = "จำนวนรายวิชา: " + (numArr)
+            }
+        }
+    }
+}
+}
