@@ -230,4 +230,6 @@ function reArrIndex(){
         table.rows[i+1].cells[0].innerHTML = i+1;
     } 
 }
+function FindMeBtn(){
+    alert("You got me!")
 }
