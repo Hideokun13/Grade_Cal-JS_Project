@@ -163,7 +163,8 @@ function InsertTable(i){
         subjScore.innerHTML = temp[2]
             if(temp[3] != null){
                 subjGrade.innerHTML = temp[3]
-                row.insertCell(4).innerHTML = '<button onclick="deleteData()">Delete</button>'
+
+                row.insertCell(5).innerHTML = '<button type="button" class="btn btn-danger" onclick="deleteData(true)">Delete</button>'
             }
 }
 function PrintGrade(){
@@ -195,19 +196,22 @@ function FloorGPA(gpa){
        return gpa.toFixed(2)
     }
 }
-function deleteData(){
+function deleteData(isClick){
     let index, table = document.getElementById("GradeTable")
     for(let i = 0; i < table.rows.length; i++){
         table.rows[i].onclick = function()
         {
-            index = this.rowIndex
-            let con = confirm("คุณต้องการที่จะลบข้อมูลบรรทัดนี้หรือไม่")
-            if(con === true){
-                deleteDataArr(index)
-                table.deleteRow(index)
-                numArr--
-                document.getElementById("subj_Count").innerHTML = "จำนวนรายวิชา: " + (numArr)
-            }
+            if(isClick === true){
+                index = this.rowIndex
+                let con = confirm("คุณต้องการที่จะลบข้อมูลบรรทัดนี้หรือไม่")
+                if(con === true){
+                    deleteDataArr(index)
+                    table.deleteRow(index)
+                    numArr--
+                    document.getElementById("subj_Count").innerHTML = "จำนวนรายวิชา: " + (numArr)
+                    reArrIndex()
+                }
+            }  
         }
     }
 }
