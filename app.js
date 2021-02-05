@@ -20,7 +20,7 @@ function InputData(){
             }
         }
         else{
-            alert('กรุณาใส่หน่วยกิตที่มีช่วงระหว่าง 1 - 3 หน่วยกิต \nกรณีที่รายวิชานั้นไม่มีหน่วยกิต กรุณาใส่เลข 0 หรือเครื่องหมาย " - "')
+            alert('กรุณาใส่หน่วยกิตที่มีช่วงระหว่าง 1 - 3 หน่วยกิต \nกรณีที่รายวิชานั้นไม่มีหน่วยกิต กรุณาใส่เลข 0')
         }
     }
     else{
@@ -44,31 +44,31 @@ function CalGrade(){
             let temp = gradeData[i].split(",")
             let score = temp[2]
             let grade = ""
-            if(temp[1] != "-" || temp[1] != 0 && score >= 85){
+            if(temp[1] != 0 && score >= 85){
                 grade = "A"
             }
-            else if(temp[1] != "-" || temp[1] != 0 && score >= 80 && score < 85){
+            else if(temp[1] != 0 && score >= 80 && score < 85){
                 grade = "B+"
             }
-            else if(temp[1] != "-" || temp[1] != 0 && score >= 75 && score < 80){
+            else if(temp[1] != 0 && score >= 75 && score < 80){
                 grade = "B"
             }
-            else if(temp[1] != "-" || temp[1] != 0 && score >= 70 && score < 75){
+            else if(temp[1] != 0 && score >= 70 && score < 75){
                 grade = "C+"
             }
-            else if(temp[1] != "-" || temp[1] != 0 && score >= 65 && score < 70){
+            else if(temp[1] != 0 && score >= 65 && score < 70){
                 grade = "C"
             }
-            else if(temp[1] != "-" || temp[1] != 0 && score >= 60 && score < 65){
+            else if(temp[1] != 0 && score >= 60 && score < 65){
                 grade = "D+"
             }
-            else if (temp[1] != "-" || temp[1] != 0 && score >= 55 && score < 60){
+            else if (temp[1] != 0 && score >= 55 && score < 60){
                 grade = "D"
             }
-            else if (temp[1] == "-" || temp[1] == 0 && score >= 50){
+            else if (temp[1] == 0 && score >= 50){
                 grade = "S"
             }
-            else if (temp[1] == "-" || temp[1] == 0 && score < 50){
+            else if (temp[1] == 0 && score < 50){
                 grade = "U"
             }
             else {
@@ -138,7 +138,12 @@ function CalGPA(){
                 }
             }
             document.getElementById("Total_Credit").innerHTML = "หน่วยกิตรวม: " + totalCredit
-            document.getElementById("GPA_Detail").innerHTML = "เกรดเฉลี่ย GPA: " + FloorGPA((sumScore / totalCredit))
+            if(sumScore != 0){
+                document.getElementById("GPA_Detail").innerHTML = "เกรดเฉลี่ย GPA: " + FloorGPA((sumScore / totalCredit))
+            }
+            else{
+                document.getElementById("GPA_Detail").innerHTML = "เกรดเฉลี่ย GPA: " + 0.00.toFixed(2)
+            }
         }
     }
     catch(err){
