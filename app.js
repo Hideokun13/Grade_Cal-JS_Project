@@ -5,13 +5,23 @@ function InputData(){
     let subjName = document.getElementById("input_subjName").value
     let subjCredit = document.getElementById("input_subjCredit").value
     let subjScore = document.getElementById("input_subjScore").value
-    if(subjName != "" && subjCredit != "" && subjScore >= 0 && subjScore != ""){
-        gradeData[numArr] = subjName + "," + subjCredit + "," + subjScore + "," + "-"
-        ClearData()
-        InsertTable(numArr)
-        gradeData = ExpandArray()
-        numArr++
-        document.getElementById("subj_Count").innerHTML = "จำนวนรายวิชา: " + (numArr)
+    if(subjName != "" && subjCredit != "" && subjScore != ""){
+        if(subjCredit >= 0 && subjCredit <= 3){
+            if(subjScore >= 0 && subjScore <= 100){
+                gradeData[numArr] = subjName + "," + subjCredit + "," + subjScore + "," + "-"
+                ClearData()
+                InsertTable(numArr)
+                gradeData = ExpandArray()
+                numArr++
+                document.getElementById("subj_Count").innerHTML = "จำนวนรายวิชา: " + (numArr)
+            }
+            else{
+                alert("กรุณาใส่คะแนนที่อยู่ในช่วง 0 - 100 คะแนน")
+            }
+        }
+        else{
+            alert('กรุณาใส่หน่วยกิตที่มีช่วงระหว่าง 1 - 3 หน่วยกิต \nกรณีที่รายวิชานั้นไม่มีหน่วยกิต กรุณาใส่เลข 0 หรือเครื่องหมาย " - "')
+        }
     }
     else{
         alert("กรุณาใส่ข้อมูลให้ครบถ้วน")
@@ -34,31 +44,31 @@ function CalGrade(){
             let temp = gradeData[i].split(",")
             let score = temp[2]
             let grade = ""
-            if(temp[1] != "-" && score >= 85){
+            if(temp[1] != "-" || temp[1] != 0 && score >= 85){
                 grade = "A"
             }
-            else if(temp[1] != "-" && score >= 80 && score < 85){
+            else if(temp[1] != "-" || temp[1] != 0 && score >= 80 && score < 85){
                 grade = "B+"
             }
-            else if(temp[1] != "-" && score >= 75 && score < 80){
+            else if(temp[1] != "-" || temp[1] != 0 && score >= 75 && score < 80){
                 grade = "B"
             }
-            else if(temp[1] != "-" && score >= 70 && score < 75){
+            else if(temp[1] != "-" || temp[1] != 0 && score >= 70 && score < 75){
                 grade = "C+"
             }
-            else if(temp[1] != "-" && score >= 65 && score < 70){
+            else if(temp[1] != "-" || temp[1] != 0 && score >= 65 && score < 70){
                 grade = "C"
             }
-            else if(temp[1] != "-" && score >= 60 && score < 65){
+            else if(temp[1] != "-" || temp[1] != 0 && score >= 60 && score < 65){
                 grade = "D+"
             }
-            else if (temp[1] != "-" && score >= 55 && score < 60){
+            else if (temp[1] != "-" || temp[1] != 0 && score >= 55 && score < 60){
                 grade = "D"
             }
-            else if (temp[1] == "-" && score >= 50){
+            else if (temp[1] == "-" || temp[1] == 0 && score >= 50){
                 grade = "S"
             }
-            else if (temp[1] == "-" && score < 50){
+            else if (temp[1] == "-" || temp[1] == 0 && score < 50){
                 grade = "U"
             }
             else {
@@ -84,7 +94,7 @@ function CalGPA(){
                 let temp = gradeData[i].split(",")
                 let credit = parseInt(temp[1])
                 let grade = temp[3]
-                if(temp[3] != "-"){
+                if(grade != "-"){
                     switch(grade){
                         case "A": {
                             sumScore += (4 * credit)
