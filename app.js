@@ -148,13 +148,16 @@ function ClearTable(){
 }
 function InsertTable(i){
     let table = document.getElementById("GradeTable")
+    let numRow = i+1
         let temp = gradeData[i].split(",")
-        let row = table.insertRow(i+1)
-        let subjName = row.insertCell(0)
-        let subjCredit = row.insertCell(1)
-        let subjScore = row.insertCell(2)
-        let subjGrade = row.insertCell(3)
+        let row = table.insertRow(numRow)
+        let dataNum = row.insertCell(0)
+        let subjName = row.insertCell(1)
+        let subjCredit = row.insertCell(2)
+        let subjScore = row.insertCell(3)
+        let subjGrade = row.insertCell(4)
 
+        dataNum.innerHTML = row.rowIndex
         subjName.innerHTML = temp[0]
         subjCredit.innerHTML = temp[1]
         subjScore.innerHTML = temp[2]
@@ -168,11 +171,13 @@ function PrintGrade(){
     for(let i = 0; i < gradeData.length; i++){
         let temp = gradeData[i].split(",")
         let row = table.insertRow(i+1)
-        let subjName = row.insertCell(0)
-        let subjCredit = row.insertCell(1)
-        let subjScore = row.insertCell(2)
-        let subjGrade = row.insertCell(3)
+        let dataNum = row.insertCell(0)
+        let subjName = row.insertCell(1)
+        let subjCredit = row.insertCell(2)
+        let subjScore = row.insertCell(3)
+        let subjGrade = row.insertCell(4)
 
+        dataNum.innerHTML = row.rowIndex
         subjName.innerHTML = temp[0]
         subjCredit.innerHTML = temp[1]
         subjScore.innerHTML = temp[2]
@@ -214,4 +219,11 @@ function deleteDataArr(index){
         gradeData.splice(index-1,1)
         console.log(gradeData)
     }
+}
+function reArrIndex(){
+    let table = document.getElementById("GradeTable")
+    for (var i = 0; i< table.rows.length; i++){
+        table.rows[i+1].cells[0].innerHTML = i+1;
+    } 
+}
 }
