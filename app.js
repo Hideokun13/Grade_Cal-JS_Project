@@ -140,11 +140,14 @@ function ClearTable(){
     while(table.rows.length) {
         table.deleteRow(0);
     }
-    let row = table.insertRow(0)
-    row.insertCell(0).innerHTML = "<b>ชื่อรายวิชา</b>"
-    row.insertCell(1).innerHTML = "<b>หน่วยกิต</b>"
-    row.insertCell(2).innerHTML = "<b>คะแนนรวม</b>"
-    row.insertCell(3).innerHTML = "<b>เกรด</b>"
+    let header = table.createTHead()
+    let row = header.insertRow(0)
+
+    row.insertCell(0).innerHTML = '<b scope="col">#</b>'
+    row.insertCell(1).innerHTML = '<b scope="col">ชื่อรายวิชา</b>'
+    row.insertCell(2).innerHTML = '<b scope="col">หน่วยกิต</b>'
+    row.insertCell(3).innerHTML = '<b scope="col">คะแนนรวม</b>'
+    row.insertCell(4).innerHTML =  '<b scope="col">เกรด</b>'             
 }
 function InsertTable(i){
     let table = document.getElementById("GradeTable")
